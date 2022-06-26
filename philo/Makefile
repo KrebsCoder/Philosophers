@@ -6,7 +6,7 @@
 #    By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/25 22:15:48 by gcosta-d          #+#    #+#              #
-#    Updated: 2022/06/25 22:16:46 by gcosta-d         ###   ########.fr        #
+#    Updated: 2022/06/25 23:55:45 by gcosta-d         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,11 @@ CC = gcc
 
 VPATH = source utils
 
-FILES = main.c
+FILES = main.c \
+		check_arguments.c \
+		ft_atoi.c \
+		ft_init.c \
+		is_str_numeric.c
 
 OBJ_PATH = ./objs/
 
