@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_init.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 23:02:40 by gcosta-d          #+#    #+#             */
-/*   Updated: 2022/06/25 23:59:49 by gcosta-d         ###   ########.fr       */
+/*   Updated: 2022/06/27 19:52:43 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,6 @@ void	ft_init(t_philo *ph, int argc, char *argv[])
 	ph->time_sleep = ft_atoi(argv[4]);
 	if (argv[5])
 		ph->times_must_eat = ft_atoi(argv[5]);
+	else
+		ph->times_must_eat = 0;
 }
