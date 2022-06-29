@@ -1,28 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_init.c                                          :+:      :+:    :+:   */
+/*   ft_exit.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/25 23:02:40 by gcosta-d          #+#    #+#             */
-/*   Updated: 2022/06/29 02:20:56 by lkrebs-l         ###   ########.fr       */
+/*   Created: 2022/06/29 02:21:53 by lkrebs-l          #+#    #+#             */
+/*   Updated: 2022/06/29 02:23:03 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/philosophers.h"
 
-void	ft_init(t_philo *ph, int argc, char *argv[])
+void	ft_exit(t_philo *ph)
 {
-	check_arguments(argc, argv);
-	ph->nbr_philos = ft_atoi(argv[1]);
-	ph->nbr_forks = ph->nbr_philos;
-	ph->time_die = ft_atoi(argv[2]);
-	ph->time_eat = ft_atoi(argv[3]);
-	ph->time_sleep = ft_atoi(argv[4]);
-	ph->list = malloc (sizeof(t_list) * 1);
-	if (argv[5])
-		ph->times_must_eat = ft_atoi(argv[5]);
-	else
-		ph->times_must_eat = 0;
+	free(ph->list);
+	exit(0);
 }
