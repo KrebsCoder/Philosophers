@@ -6,7 +6,7 @@
 #    By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/25 22:15:48 by gcosta-d          #+#    #+#              #
-#    Updated: 2022/06/27 20:14:59 by lkrebs-l         ###   ########.fr        #
+#    Updated: 2022/06/29 02:23:13 by lkrebs-l         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,9 @@ FILES = main.c \
 		check_arguments.c \
 		ft_atoi.c \
 		ft_init.c \
-		is_str_numeric.c
+		is_str_numeric.c \
+		create_philo.c \
+		ft_exit.c
 
 OBJ_PATH = ./objs/
 
