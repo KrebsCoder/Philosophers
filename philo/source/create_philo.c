@@ -6,22 +6,28 @@
 /*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 02:06:00 by lkrebs-l          #+#    #+#             */
-/*   Updated: 2022/06/29 02:29:08 by lkrebs-l         ###   ########.fr       */
+/*   Updated: 2022/06/29 23:26:59 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/philosophers.h"
 
-void *routine(t_philo *ph){
+
+static void	philo_is_eating(t_philo *ph)
+{
+	printf("tempo_em_ms philo %d está comendo\n", ph->nbr_philos);
+}
+
+void *routine(void *philo)
+{
+	t_philo *ph = philo;
 	int	i;
+
 
 	i = 1;
 	while (i)
 	{
-		printf("Hello World from Thread! :)\n");
-		usleep(1000000);
-		printf("Bye World from Thread! :(\n");
-		i = 0;
+		philo_is_eating(ph);
 		ft_exit(ph);
 	}
 	return (NULL);
@@ -34,7 +40,7 @@ void	create_philo(t_philo *ph)
 	i = 0;
 	while (i < ph->nbr_philos)
 	{
-		pthread_create(&ph->list->thread, NULL, &routine, (void *)ph);
+		pthread_create(&ph->list->thread, NULL, &routine, ph);
 		i++;
 	}
 	i = 0;
