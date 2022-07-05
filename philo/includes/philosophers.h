@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philosophers.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 22:54:36 by gcosta-d          #+#    #+#             */
-/*   Updated: 2022/06/29 02:27:04 by lkrebs-l         ###   ########.fr       */
+/*   Updated: 2022/07/05 18:47:51 by gcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,14 @@ typedef struct s_philo
 
 void	check_arguments(int argc, char *argv[]);
 void	create_philo(t_philo *ph);
+void	*routine(void *philo);
 
 // Utils
 int		ft_atoi(const char *str);
 void	ft_init(t_philo *ph, int argc, char *argv[]);
 int		is_str_positive_num(char *str);
-void	ft_exit(t_philo *ph);
+void	ft_exit(t_list *list);
+t_list	*ft_lstnew(int id);
+void	ft_lstadd_back(t_list **lst, t_list *new);
 
 #endif
