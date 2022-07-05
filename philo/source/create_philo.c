@@ -3,50 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   create_philo.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 02:06:00 by lkrebs-l          #+#    #+#             */
-/*   Updated: 2022/06/29 23:26:59 by lkrebs-l         ###   ########.fr       */
+/*   Updated: 2022/07/05 18:46:50 by gcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/philosophers.h"
 
-
-static void	philo_is_eating(t_philo *ph)
+void	create_philo(t_philo *philo)
 {
-	printf("tempo_em_ms philo %d está comendo\n", ph->nbr_philos);
-}
-
-void *routine(void *philo)
-{
-	t_philo *ph = philo;
-	int	i;
-
-
-	i = 1;
-	while (i)
-	{
-		philo_is_eating(ph);
-		ft_exit(ph);
-	}
-	return (NULL);
-}
-
-void	create_philo(t_philo *ph)
-{
-	int	i;
+	t_list	*node;
+	int		i;
 
 	i = 0;
-	while (i < ph->nbr_philos)
+	while (i < philo->nbr_philos)
 	{
-		pthread_create(&ph->list->thread, NULL, &routine, ph);
+		node = ft_lstnew(i);
+		ft_lstadd_back(&philo->list, node);
+		pthread_create(&node->thread, NULL, &routine, node);
 		i++;
 	}
 	i = 0;
-	while (i < ph->nbr_philos)
+	while (i < philo->nbr_philos)
 	{
-		pthread_join(ph->list->thread, NULL);
+		pthread_join(node->thread, NULL);
 		i++;
 	}
+	ft_exit(philo->list);
 }
