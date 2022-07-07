@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/05 01:25:06 by gcosta-d          #+#    #+#             */
-/*   Updated: 2022/07/06 04:22:54 by gcosta-d         ###   ########.fr       */
+/*   Updated: 2022/07/07 03:22:27 by gcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ void	ft_lstadd_front(t_list *lst, t_list *new)
 	{
 		new -> next = lst->next;
 		new -> previous = lst;
-		lst->next->previous = new;
-		lst->next = new;
+		lst -> next -> previous = new;
+		lst -> next = new;
 		lst = new;
 	}
 }
