@@ -6,7 +6,7 @@
 /*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/05 01:21:48 by gcosta-d          #+#    #+#             */
-/*   Updated: 2022/07/06 03:06:07 by gcosta-d         ###   ########.fr       */
+/*   Updated: 2022/07/07 02:28:36 by gcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,6 @@ t_list	*ft_lstnew(int id, t_philo *philo)
 	new -> id = id;
 	new -> next = new;
 	new -> previous = new;
+	new -> eat_counter = 0;
 	return (new);
 }
