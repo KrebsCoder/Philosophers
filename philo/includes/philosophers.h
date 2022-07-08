@@ -6,7 +6,7 @@
 /*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 22:54:36 by gcosta-d          #+#    #+#             */
-/*   Updated: 2022/07/07 03:51:46 by gcosta-d         ###   ########.fr       */
+/*   Updated: 2022/07/08 04:28:21 by gcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ typedef struct s_list
 	struct	s_list	*previous;
 	struct	s_list	*next;
 	struct	s_philo	*philo;
+	struct	timeval	stopped_eating;
 }	t_list;
 
 typedef struct s_philo
@@ -39,7 +40,9 @@ typedef struct s_philo
 	int				time_sleep;
 	int				time_die;
 	int				times_must_eat;
-	struct	timeval	start_time;
+	int				is_dead;
+	int				start_time_flag;
+	long			start_time;
 	struct	timeval	current_time;
 	t_list			*list;
 }	t_philo;
@@ -51,7 +54,11 @@ void	create_threads(t_philo *philo);
 void	thread_join(t_philo *philo);
 void	init_linked_list(t_philo *philo);
 void	init_mutex(t_philo *philo);
+void	destroy_mutex(t_philo *philo);
 long	time_in_ms(t_list *philo);
+void	start_time(t_philo *philo);
+void	detach_thread(t_philo *philo);
+void	philo_is_dead(t_philo *philo);
 
 void	philo_is_eating(t_list *philo);
 void	philo_is_sleeping(t_list *philo);

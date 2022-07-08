@@ -6,7 +6,7 @@
 #    By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/25 22:15:48 by gcosta-d          #+#    #+#              #
-#    Updated: 2022/07/07 03:08:28 by gcosta-d         ###   ########.fr        #
+#    Updated: 2022/07/08 02:52:56 by gcosta-d         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,11 +22,15 @@ FILES = main.c \
 		check_arguments.c \
 		create_philo.c \
 		create_threads.c \
+		destroy_mutex.c \
+		detach_thread.c \
 		eating.c \
 		init_linked_list.c \
 		init_mutex.c \
+		philo_is_dead.c \
 		routines.c \
 		sleeping.c \
+		start_time.c \
 		thinking.c \
 		thread_join.c \
 		time_in_ms.c \
