@@ -6,7 +6,7 @@
 /*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 02:21:53 by lkrebs-l          #+#    #+#             */
-/*   Updated: 2022/07/06 02:38:49 by gcosta-d         ###   ########.fr       */
+/*   Updated: 2022/07/08 04:07:19 by gcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static void free_list(t_list *philo)
 
 void	ft_exit(t_list *list)
 {
-
+	destroy_mutex(list->philo);
 	free_list(list);
 	exit(0);
 }
