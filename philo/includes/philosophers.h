@@ -6,7 +6,7 @@
 /*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 22:54:36 by gcosta-d          #+#    #+#             */
-/*   Updated: 2022/07/08 04:28:21 by gcosta-d         ###   ########.fr       */
+/*   Updated: 2022/07/12 02:00:22 by gcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ typedef struct s_list
 	pthread_t		thread;
 	int				eat_counter;
 	int				id;
-	struct	s_list	*previous;
-	struct	s_list	*next;
-	struct	s_philo	*philo;
-	struct	timeval	stopped_eating;
+	struct s_list	*previous;
+	struct s_list	*next;
+	struct s_philo	*philo;
+	struct timeval	stopped_eating;
 }	t_list;
 
 typedef struct s_philo
@@ -43,7 +43,7 @@ typedef struct s_philo
 	int				is_dead;
 	int				start_time_flag;
 	long			start_time;
-	struct	timeval	current_time;
+	struct timeval	current_time;
 	t_list			*list;
 }	t_philo;
 

@@ -6,7 +6,7 @@
 /*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/05 02:33:19 by gcosta-d          #+#    #+#             */
-/*   Updated: 2022/07/08 04:26:47 by gcosta-d         ###   ########.fr       */
+/*   Updated: 2022/07/12 02:01:46 by gcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,9 @@ static void	check_if_is_dead(t_philo *philo);
 
 void	*routine(void *node)
 {
-	t_list	*philo = (t_list *)node;
+	t_list	*philo;
 
+	philo = (t_list *)node;
 	start_time(philo->philo);
 	while (1)
 	{
