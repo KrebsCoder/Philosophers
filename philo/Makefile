@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+         #
+#    By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/25 22:15:48 by gcosta-d          #+#    #+#              #
-#    Updated: 2022/07/08 02:52:56 by gcosta-d         ###   ########.fr        #
+#    Updated: 2022/07/14 01:54:55 by lkrebs-l         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,7 +39,8 @@ FILES = main.c \
 		ft_init.c \
 		ft_lstadd_front.c \
 		ft_lstnew.c \
-		is_str_numeric.c
+		is_str_numeric.c \
+		routine_vigilant.c
 
 OBJ_PATH = ./objs/
 
