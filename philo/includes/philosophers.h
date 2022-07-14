@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philosophers.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 22:54:36 by gcosta-d          #+#    #+#             */
-/*   Updated: 2022/07/14 03:00:51 by lkrebs-l         ###   ########.fr       */
+/*   Updated: 2022/07/14 05:10:55 by gcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,10 @@ typedef struct s_philo
 	long			start_time;
 	t_list			*list;
 	pthread_t		vigilant;
+	pthread_mutex_t	start_time_mutex;
+	pthread_mutex_t	time_in_ms_mutex;
+	pthread_mutex_t	is_dead_mutex;
+	pthread_mutex_t	is_printing_mutex;
 	struct timeval	current_time;
 }	t_philo;
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sleeping.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 02:20:31 by gcosta-d          #+#    #+#             */
-/*   Updated: 2022/07/14 03:12:50 by lkrebs-l         ###   ########.fr       */
+/*   Updated: 2022/07/14 05:19:31 by gcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@ void	philo_is_sleeping(t_list *philo)
 	long			time_stopped_eating;
 	int				i;
 
+	//pthread_mutex_lock(&philo->philo->is_printing_mutex);
 	printf("%ld ms %d is sleeping\n", time_in_ms(philo), philo->id);
+	//pthread_mutex_unlock(&philo->philo->is_printing_mutex);
 	time_stopped_eating = (philo->stopped_eating.tv_sec * 1000) + \
 		(philo->stopped_eating.tv_usec / 1000);
 	i = 0;

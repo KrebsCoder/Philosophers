@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   destroy_mutex.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 02:26:09 by gcosta-d          #+#    #+#             */
-/*   Updated: 2022/07/14 01:49:38 by lkrebs-l         ###   ########.fr       */
+/*   Updated: 2022/07/14 05:19:42 by gcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,8 @@ void	destroy_mutex(t_philo *philo)
 		tmp = tmp->next;
 		i--;
 	}
+	pthread_mutex_destroy(&philo->start_time_mutex);
+	pthread_mutex_destroy(&philo->time_in_ms_mutex);
+	//pthread_mutex_destroy(&philo->is_dead_mutex);
+	//pthread_mutex_destroy(&philo->is_printing_mutex);
 }
