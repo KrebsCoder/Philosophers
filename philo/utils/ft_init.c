@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_init.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 23:02:40 by gcosta-d          #+#    #+#             */
-/*   Updated: 2022/07/08 04:23:38 by gcosta-d         ###   ########.fr       */
+/*   Updated: 2022/07/14 02:14:42 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	ft_init(t_philo *philo, int argc, char *argv[])
 	philo->time_sleep = ft_atoi(argv[4]);
 	philo->is_dead = -1;
 	philo->start_time_flag = 0;
+	philo->someone_is_dead = 0;
 	if (argv[5])
 		philo->times_must_eat = ft_atoi(argv[5]);
 	else

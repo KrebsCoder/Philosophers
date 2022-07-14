@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/05 01:21:48 by gcosta-d          #+#    #+#             */
-/*   Updated: 2022/07/12 02:03:50 by gcosta-d         ###   ########.fr       */
+/*   Updated: 2022/07/14 03:04:10 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,6 @@ t_list	*ft_lstnew(int id, t_philo *philo)
 	new -> next = new;
 	new -> previous = new;
 	new -> eat_counter = 0;
+	new -> has_fork = 0;
 	return (new);
 }
