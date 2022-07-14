@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sleeping.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 02:20:31 by gcosta-d          #+#    #+#             */
-/*   Updated: 2022/07/12 03:02:11 by gcosta-d         ###   ########.fr       */
+/*   Updated: 2022/07/14 03:12:50 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,7 @@ void	philo_is_sleeping(t_list *philo)
 		gettimeofday(&time, NULL);
 		time_now = (time.tv_sec * 1000) + (time.tv_usec / 1000);
 		if ((time_now - time_stopped_eating) > philo->philo->time_die)
-		{
-			philo->philo->is_dead = philo->id;
-			philo_is_dead(philo->philo);
-		}
+			philo_is_dead(philo->philo, philo->id);
 		i += 5;
 	}
 }
