@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   destroy_mutex.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 02:26:09 by gcosta-d          #+#    #+#             */
-/*   Updated: 2022/07/08 04:21:20 by gcosta-d         ###   ########.fr       */
+/*   Updated: 2022/07/14 01:49:38 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	destroy_mutex(t_philo *philo)
 	i = philo->nbr_philos;
 	while (i > 0)
 	{
-		//pthread_mutex_unlock(&tmp->fork);
 		pthread_mutex_destroy(&tmp->fork);
 		tmp = tmp->next;
 		i--;
