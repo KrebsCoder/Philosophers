@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   detach_thread.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 02:48:19 by gcosta-d          #+#    #+#             */
-/*   Updated: 2022/07/12 02:06:25 by gcosta-d         ###   ########.fr       */
+/*   Updated: 2022/07/14 03:10:33 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,5 @@ void	detach_thread(t_philo *philo)
 		tmp = tmp->next;
 		i--;
 	}
+	pthread_detach(philo->vigilant);
 }

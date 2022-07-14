@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   create_threads.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 02:24:18 by gcosta-d          #+#    #+#             */
-/*   Updated: 2022/07/12 02:24:49 by gcosta-d         ###   ########.fr       */
+/*   Updated: 2022/07/14 03:09:18 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	create_threads(t_philo *philo)
 
 	i = philo->nbr_philos;
 	tmp = philo->list;
+	pthread_create(&philo->vigilant, NULL, &routine_vigilant, tmp);
 	while (i > 0)
 	{
 		pthread_create(&tmp->thread, NULL, &routine, tmp);
