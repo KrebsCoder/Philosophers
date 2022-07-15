@@ -6,7 +6,7 @@
 /*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 02:23:30 by gcosta-d          #+#    #+#             */
-/*   Updated: 2022/07/15 04:25:48 by lkrebs-l         ###   ########.fr       */
+/*   Updated: 2022/07/15 07:00:10 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,5 @@ void	init_mutex(t_philo *philo)
 		i--;
 	}
 	pthread_mutex_init(&philo->is_printing_mutex, NULL);
+	pthread_mutex_init(&philo->check_deaths, NULL);
 }
