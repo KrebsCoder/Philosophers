@@ -6,7 +6,7 @@
 #    By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/25 22:15:48 by gcosta-d          #+#    #+#              #
-#    Updated: 2022/07/14 01:54:55 by lkrebs-l         ###   ########.fr        #
+#    Updated: 2022/07/15 02:46:21 by lkrebs-l         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ FILES = main.c \
 		philo_is_dead.c \
 		routines.c \
 		sleeping.c \
-		start_time.c \
+		current_time.c \
 		thinking.c \
 		thread_join.c \
 		time_in_ms.c \
