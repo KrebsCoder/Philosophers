@@ -6,7 +6,7 @@
 /*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 22:54:36 by gcosta-d          #+#    #+#             */
-/*   Updated: 2022/07/15 04:25:45 by lkrebs-l         ###   ########.fr       */
+/*   Updated: 2022/07/15 05:30:09 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,5 +77,6 @@ int		is_str_positive_num(char *str);
 void	ft_exit(t_list *list);
 t_list	*ft_lstnew(int id, t_philo *philo);
 void	ft_lstadd_front(t_list *lst, t_list *new);
+void	free_list(t_list *philo);
 
 #endif

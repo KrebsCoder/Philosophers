@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   free_list.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/25 22:11:11 by gcosta-d          #+#    #+#             */
-/*   Updated: 2022/07/15 05:29:37 by lkrebs-l         ###   ########.fr       */
+/*   Created: 2022/07/15 05:29:39 by lkrebs-l          #+#    #+#             */
+/*   Updated: 2022/07/15 05:29:54 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/philosophers.h"
 
-int	main(int argc, char *argv[])
+void	free_list(t_list *philo)
 {
-	t_philo	philo;
+	t_list	*node;
+	int		i;
 
-	ft_init(&philo, argc, argv);
-	create_philo(&philo);
-	free_list(philo.list);
-	return (0);
+	i = philo->philo->nbr_philos;
+	while (i > 0)
+	{
+		node = philo;
+		philo = philo->next;
+		free(node);
+		i--;
+	}
 }

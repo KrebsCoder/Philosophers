@@ -6,7 +6,7 @@
 #    By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/25 22:15:48 by gcosta-d          #+#    #+#              #
-#    Updated: 2022/07/15 02:46:21 by lkrebs-l         ###   ########.fr        #
+#    Updated: 2022/07/15 05:30:56 by lkrebs-l         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,14 +33,13 @@ FILES = main.c \
 		current_time.c \
 		thinking.c \
 		thread_join.c \
-		time_in_ms.c \
 		ft_atoi.c \
-		ft_exit.c \
 		ft_init.c \
 		ft_lstadd_front.c \
 		ft_lstnew.c \
 		is_str_numeric.c \
-		routine_vigilant.c
+		routine_vigilant.c \
+		free_list.c
 
 OBJ_PATH = ./objs/
 
