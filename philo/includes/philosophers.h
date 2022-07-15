@@ -6,7 +6,7 @@
 /*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 22:54:36 by gcosta-d          #+#    #+#             */
-/*   Updated: 2022/07/15 05:30:09 by lkrebs-l         ###   ########.fr       */
+/*   Updated: 2022/07/15 07:13:09 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ typedef struct s_list
 
 typedef struct s_philo
 {
-	int				someone_is_dead;
+	_Atomic int				someone_is_dead;
 	int				nbr_philos;
 	int				nbr_forks;
 	int				time_eat;
@@ -46,6 +46,7 @@ typedef struct s_philo
 	int				is_dead;
 	t_list			*list;
 	pthread_t		vigilant;
+	pthread_mutex_t	check_deaths;
 	pthread_mutex_t	time_in_ms_mutex;
 	pthread_mutex_t	is_printing_mutex;
 	struct timeval	current_time;
@@ -78,5 +79,6 @@ void	ft_exit(t_list *list);
 t_list	*ft_lstnew(int id, t_philo *philo);
 void	ft_lstadd_front(t_list *lst, t_list *new);
 void	free_list(t_list *philo);
+int		check_death(t_philo *philo);
 
 #endif

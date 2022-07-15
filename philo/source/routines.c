@@ -6,7 +6,7 @@
 /*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/05 02:33:19 by gcosta-d          #+#    #+#             */
-/*   Updated: 2022/07/15 06:42:27 by lkrebs-l         ###   ########.fr       */
+/*   Updated: 2022/07/15 07:13:04 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,13 @@ void	*routine(void *node)
 		usleep(2 * 1000);
 	while (!philo->philo->someone_is_dead)
 	{
-		if (philo->philo->someone_is_dead)
+		if (check_death(philo->philo))
 			break ;
 		philo_is_eating(philo);
-		if (philo->philo->someone_is_dead)
+		if (check_death(philo->philo))
 			break ;
 		philo_is_sleeping(philo);
-		if (philo->philo->someone_is_dead)
+		if (check_death(philo->philo))
 			break ;
 		philo_is_thinking(philo);
 	}

@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   thinking.c                                         :+:      :+:    :+:   */
+/*   check_death.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/07 02:21:07 by gcosta-d          #+#    #+#             */
-/*   Updated: 2022/07/15 06:56:44 by lkrebs-l         ###   ########.fr       */
+/*   Created: 2022/07/15 06:51:24 by lkrebs-l          #+#    #+#             */
+/*   Updated: 2022/07/15 06:58:27 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/philosophers.h"
 
-void	philo_is_thinking(t_list *philo)
+int	check_death(t_philo *philo)
 {
-	if (check_death(philo->philo))
-		return ;
-	pthread_mutex_lock(&philo->philo->is_printing_mutex);
-	if (check_death(philo->philo))
-		return ;
-	printf("%ld ms %d is thinking\n", current_time() - philo->start_time, \
-		philo->id);
-	pthread_mutex_unlock(&philo->philo->is_printing_mutex);
+	int	is_someone_dead;
+
+	pthread_mutex_lock(&philo->check_deaths);
+	is_someone_dead = philo->someone_is_dead;
+	pthread_mutex_unlock(&philo->check_deaths);
+	return (is_someone_dead);
 }

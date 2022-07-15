@@ -6,7 +6,7 @@
 #    By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/25 22:15:48 by gcosta-d          #+#    #+#              #
-#    Updated: 2022/07/15 05:30:56 by lkrebs-l         ###   ########.fr        #
+#    Updated: 2022/07/15 06:57:54 by lkrebs-l         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,7 +39,8 @@ FILES = main.c \
 		ft_lstnew.c \
 		is_str_numeric.c \
 		routine_vigilant.c \
-		free_list.c
+		free_list.c \
+		check_death.c
 
 OBJ_PATH = ./objs/
 
