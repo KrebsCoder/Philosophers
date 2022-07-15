@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philosophers.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 22:54:36 by gcosta-d          #+#    #+#             */
-/*   Updated: 2022/07/14 05:10:55 by gcosta-d         ###   ########.fr       */
+/*   Updated: 2022/07/15 04:25:45 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,15 @@
 
 typedef struct s_list
 {
-	int				has_fork;
 	int				eat_counter;
 	int				id;
 	long			first_fork;
+	long			start_time;
+	long			stopped_eating;
 	pthread_t		thread;
 	struct s_list	*previous;
 	struct s_list	*next;
 	struct s_philo	*philo;
-	struct timeval	stopped_eating;
 	pthread_mutex_t	fork;
 }	t_list;
 
@@ -44,13 +44,9 @@ typedef struct s_philo
 	int				time_die;
 	int				times_must_eat;
 	int				is_dead;
-	int				start_time_flag;
-	long			start_time;
 	t_list			*list;
 	pthread_t		vigilant;
-	pthread_mutex_t	start_time_mutex;
 	pthread_mutex_t	time_in_ms_mutex;
-	pthread_mutex_t	is_dead_mutex;
 	pthread_mutex_t	is_printing_mutex;
 	struct timeval	current_time;
 }	t_philo;
@@ -63,7 +59,7 @@ void	init_linked_list(t_philo *philo);
 void	init_mutex(t_philo *philo);
 void	destroy_mutex(t_philo *philo);
 long	time_in_ms(t_list *philo);
-void	start_time(t_philo *philo);
+long	current_time(void);
 void	detach_thread(t_philo *philo);
 void	philo_is_dead(t_philo *philo, int philo_id);
 
