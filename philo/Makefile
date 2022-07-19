@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+         #
+#    By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/25 22:15:48 by gcosta-d          #+#    #+#              #
-#    Updated: 2022/07/14 01:54:55 by lkrebs-l         ###   ########.fr        #
+#    Updated: 2022/07/19 04:07:00 by gcosta-d         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,8 +20,10 @@ VPATH = source utils
 
 FILES = main.c \
 		check_arguments.c \
+		check_if_is_dead.c \
 		create_philo.c \
 		create_threads.c \
+		current_time.c \
 		destroy_mutex.c \
 		detach_thread.c \
 		eating.c \
@@ -30,12 +32,11 @@ FILES = main.c \
 		philo_is_dead.c \
 		routines.c \
 		sleeping.c \
-		start_time.c \
 		thinking.c \
 		thread_join.c \
 		time_in_ms.c \
 		ft_atoi.c \
-		ft_exit.c \
+		free_list.c \
 		ft_init.c \
 		ft_lstadd_front.c \
 		ft_lstnew.c \

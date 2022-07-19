@@ -6,7 +6,7 @@
 /*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 03:07:30 by gcosta-d          #+#    #+#             */
-/*   Updated: 2022/07/14 04:56:38 by gcosta-d         ###   ########.fr       */
+/*   Updated: 2022/07/19 03:32:43 by gcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,8 @@ long	time_in_ms(t_list *philo)
 	long	current_time_ms;
 
 	pthread_mutex_lock(&philo->philo->time_in_ms_mutex);
-	gettimeofday(&philo->philo->current_time, NULL);
-	current_time_ms = (philo->philo->current_time.tv_sec * 1000) + \
-		(philo->philo->current_time.tv_usec / 1000);
-	time_in_ms = current_time_ms - philo->philo->start_time;
+	current_time_ms = current_time();
+	time_in_ms = current_time_ms - philo->start_time;
 	pthread_mutex_unlock(&philo->philo->time_in_ms_mutex);
 	return (time_in_ms);
 }
