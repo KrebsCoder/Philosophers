@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philosophers.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 22:54:36 by gcosta-d          #+#    #+#             */
-/*   Updated: 2022/07/19 06:11:44 by lkrebs-l         ###   ########.fr       */
+/*   Updated: 2022/07/20 01:26:15 by gcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ typedef struct s_list
 
 typedef struct s_philo
 {
-	_Atomic int				someone_is_dead;
+	_Atomic int		someone_is_dead;
 	int				nbr_philos;
 	int				nbr_forks;
 	int				time_eat;

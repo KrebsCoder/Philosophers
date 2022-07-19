@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   routine_vigilant.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 01:05:50 by lkrebs-l          #+#    #+#             */
-/*   Updated: 2022/07/19 06:13:57 by lkrebs-l         ###   ########.fr       */
+/*   Updated: 2022/07/20 01:30:20 by gcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*routine_vigilant(void *node)
 	t_list	*philo;
 
 	philo = (t_list *)node;
-	//usleep(2100);
+	usleep(2100);
 	//printf("vigilant entrou\n");
 	while (!philo->philo->someone_is_dead)
 	{
@@ -34,7 +34,7 @@ void	*routine_vigilant(void *node)
 		}
 		pthread_mutex_unlock(&philo->philo->is_printing_mutex);
 		philo = philo->next;
-		usleep(100);
+		usleep(1000);
 	}
 	philo_is_dead(philo->philo, philo->id);
 	return (NULL);
