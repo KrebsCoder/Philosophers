@@ -6,7 +6,7 @@
 /*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 22:54:36 by gcosta-d          #+#    #+#             */
-/*   Updated: 2022/07/15 07:13:09 by lkrebs-l         ###   ########.fr       */
+/*   Updated: 2022/07/19 06:11:44 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ typedef struct s_list
 	int				id;
 	long			first_fork;
 	long			start_time;
-	long			stopped_eating;
+	_Atomic long			stopped_eating;
 	pthread_t		thread;
 	struct s_list	*previous;
 	struct s_list	*next;
