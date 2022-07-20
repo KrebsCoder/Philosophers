@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   current_time.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 02:04:14 by gcosta-d          #+#    #+#             */
-/*   Updated: 2022/07/15 02:46:44 by lkrebs-l         ###   ########.fr       */
+/*   Updated: 2022/07/20 04:04:35 by gcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,4 +18,13 @@ long	current_time(void)
 
 	gettimeofday(&current_time, NULL);
 	return ((current_time.tv_sec * 1000) + (current_time.tv_usec / 1000));
+}
+
+void    msleep(int time_in_ms)
+{
+    long    start_time;
+
+    start_time = current_time();
+    while ((current_time() - start_time) < (long)time_in_ms)
+        usleep(10);
 }

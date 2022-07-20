@@ -1,19 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   philo_is_dead.c                                    :+:      :+:    :+:   */
+/*   print_philo_is_dead.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/08 02:41:23 by gcosta-d          #+#    #+#             */
-/*   Updated: 2022/07/15 04:57:28 by lkrebs-l         ###   ########.fr       */
+/*   Created: 2022/07/20 02:28:34 by gcosta-d          #+#    #+#             */
+/*   Updated: 2022/07/20 04:51:14 by gcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/philosophers.h"
 
-void	philo_is_dead(t_philo *philo, int philo_id)
+void	print_philo_is_dead(t_list *philo, char *string)
 {
-	printf("%ld ms %d died\n", current_time() - philo->list->start_time, \
-		philo_id);
+	//pthread_mutex_lock(&philo->philo->is_printing_mutex);
+	printf("%ld %d %s\n", current_time() - philo->start_time, \
+		philo->id, string);
+	if (check_death(philo->philo))
+		return ;
 }

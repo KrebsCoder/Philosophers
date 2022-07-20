@@ -1,20 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   thinking.c                                         :+:      :+:    :+:   */
+/*   strict_strcmp.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/07 02:21:07 by gcosta-d          #+#    #+#             */
-/*   Updated: 2022/07/20 04:29:46 by gcosta-d         ###   ########.fr       */
+/*   Created: 2022/07/20 02:15:44 by gcosta-d          #+#    #+#             */
+/*   Updated: 2022/07/20 02:20:46 by gcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/philosophers.h"
 
-int	philo_is_thinking(t_list *philo)
+
+int	ft_strncmp(const char *s1, const char *s2, unsigned int n)
 {
-	print_philo(philo, THINK);
-	usleep(300);
-	return (1);
+	unsigned char	*str1;
+	unsigned char	*str2;
+	size_t			i;
+
+	if (n == 0)
+		return (0);
+	str1 = (unsigned char *)s1;
+	str2 = (unsigned char *)s2;
+	i = 0;
+	while ((str1[i] == str2[i]) && str1[i] && str2[i] && i < n)
+		i++;
+	if (i < n)
+		return (str1[i] - str2[i]);
+	return (0);
 }

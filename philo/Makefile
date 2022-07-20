@@ -3,17 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+         #
+#    By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/25 22:15:48 by gcosta-d          #+#    #+#              #
-#    Updated: 2022/07/15 06:57:54 by lkrebs-l         ###   ########.fr        #
+#    Updated: 2022/07/20 04:51:32 by gcosta-d         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = philo
 
-CFLAGS = -Wall -Wextra -Werror -g3 -pthread
-
+CFLAGS = -Wall -Wextra -Werror -g3 -pthread -fsanitize=thread
+#-fsanitize=thread
 CC = gcc
 
 VPATH = source utils
@@ -27,7 +27,8 @@ FILES = main.c \
 		eating.c \
 		init_linked_list.c \
 		init_mutex.c \
-		philo_is_dead.c \
+		print_philo_is_dead.c \
+		print_philo.c \
 		routines.c \
 		sleeping.c \
 		current_time.c \
@@ -40,7 +41,8 @@ FILES = main.c \
 		is_str_numeric.c \
 		routine_vigilant.c \
 		free_list.c \
-		check_death.c
+		check_death.c \
+		ft_strncmp.c
 
 OBJ_PATH = ./objs/
 

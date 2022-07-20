@@ -6,7 +6,7 @@
 /*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 22:54:36 by gcosta-d          #+#    #+#             */
-/*   Updated: 2022/07/20 01:26:15 by gcosta-d         ###   ########.fr       */
+/*   Updated: 2022/07/20 04:03:39 by gcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,11 @@
 # include <sys/time.h>
 # include <string.h>
 
+# define FORK "has taken a fork"
+# define EAT "is eating"
+# define SLEEP "is sleeping"
+# define THINK "is thinking"
+# define DIED "died"
 typedef struct s_list
 {
 	int				eat_counter;
@@ -62,12 +67,14 @@ void	destroy_mutex(t_philo *philo);
 long	time_in_ms(t_list *philo);
 long	current_time(void);
 void	detach_thread(t_philo *philo);
-void	philo_is_dead(t_philo *philo, int philo_id);
+void	print_philo(t_list *philo, char *string);
+void	print_philo_is_dead(t_list *philo, char *string);
+void    msleep(int time_in_ms);
 
 // Routines
-void	philo_is_eating(t_list *philo);
-void	philo_is_sleeping(t_list *philo);
-void	philo_is_thinking(t_list *philo);
+int		philo_is_eating(t_list *philo);
+int		philo_is_sleeping(t_list *philo);
+int		philo_is_thinking(t_list *philo);
 void	*routine(void *node);
 void	*routine_vigilant(void *node);
 
@@ -80,5 +87,6 @@ t_list	*ft_lstnew(int id, t_philo *philo);
 void	ft_lstadd_front(t_list *lst, t_list *new);
 void	free_list(t_list *philo);
 int		check_death(t_philo *philo);
+int		ft_strncmp(const char *s1, const char *s2, unsigned int n);
 
 #endif
