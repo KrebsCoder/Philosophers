@@ -6,7 +6,7 @@
 /*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 23:02:40 by gcosta-d          #+#    #+#             */
-/*   Updated: 2022/07/15 02:47:05 by lkrebs-l         ###   ########.fr       */
+/*   Updated: 2022/07/21 01:26:53 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_init(t_philo *philo, int argc, char *argv[])
 	philo->time_eat = ft_atoi(argv[3]);
 	philo->time_sleep = ft_atoi(argv[4]);
 	philo->is_dead = -1;
-	philo->someone_is_dead = 0;
+	philo->stop_flag = 0;
 	if (argv[5])
 		philo->times_must_eat = ft_atoi(argv[5]);
 	else

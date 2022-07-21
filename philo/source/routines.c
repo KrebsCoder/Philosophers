@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   routines.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/05 02:33:19 by gcosta-d          #+#    #+#             */
-/*   Updated: 2022/07/20 04:06:25 by gcosta-d         ###   ########.fr       */
+/*   Updated: 2022/07/21 01:26:57 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	*routine(void *node)
 	philo->stopped_eating = philo->start_time;
 	if (philo->id % 2 != 0)
 		msleep(2);
-	while (!philo->philo->someone_is_dead)
+	while (!philo->philo->stop_flag)
 	{
 		if (!philo_is_eating(philo))
 			break ;

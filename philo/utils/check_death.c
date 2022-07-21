@@ -6,7 +6,7 @@
 /*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 06:51:24 by lkrebs-l          #+#    #+#             */
-/*   Updated: 2022/07/19 05:52:43 by lkrebs-l         ###   ########.fr       */
+/*   Updated: 2022/07/21 01:26:47 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 int	check_death(t_philo *philo)
 {
-	int	is_someone_dead;
+	int	stop_flag;
 
 	//pthread_mutex_lock(&philo->check_deaths);
-	is_someone_dead = philo->someone_is_dead;
+	stop_flag = philo->stop_flag;
 	//pthread_mutex_unlock(&philo->check_deaths);
-	return (is_someone_dead);
+	return (stop_flag);
 }
