@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philosophers.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 22:54:36 by gcosta-d          #+#    #+#             */
-/*   Updated: 2022/07/21 01:50:02 by lkrebs-l         ###   ########.fr       */
+/*   Updated: 2022/07/21 03:48:40 by gcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,17 +31,18 @@ typedef struct s_list
 	int				id;
 	long			first_fork;
 	long			start_time;
-	_Atomic long			stopped_eating;
+	long			stopped_eating;
 	pthread_t		thread;
 	struct s_list	*previous;
 	struct s_list	*next;
 	struct s_philo	*philo;
 	pthread_mutex_t	fork;
+	pthread_mutex_t	eat_counter_mutex;
 }	t_list;
 
 typedef struct s_philo
 {
-	_Atomic int		stop_flag;
+	int				stop_flag;
 	int				nbr_philos;
 	int				nbr_forks;
 	int				time_eat;

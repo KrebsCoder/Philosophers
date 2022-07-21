@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   routine_vigilant.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 01:05:50 by lkrebs-l          #+#    #+#             */
-/*   Updated: 2022/07/21 02:09:20 by lkrebs-l         ###   ########.fr       */
+/*   Updated: 2022/07/21 03:47:21 by gcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/philosophers.h"
 
 static int	check_eat_counter(t_list *philo);
+static void	set_stop_flag(t_philo *philo);
 
 void	*routine_vigilant(void *node)
 {
@@ -27,7 +28,7 @@ void	*routine_vigilant(void *node)
 		time_last_eaten = current_time() - philo->stopped_eating;
 		if (time_last_eaten > philo->philo->time_die)
 		{
-			philo->philo->stop_flag = 1;
+			set_stop_flag(philo->philo);
 			destroy_mutex(philo->philo);
 			break ;
 		}
@@ -45,24 +46,30 @@ static int	check_eat_counter(t_list *philo)
 {
 	t_list	*tmp;
 	int	i;
-	//int	j;
 
 	tmp = philo;
-//	j = philo->philo->nbr_philos * philo->philo
 	i = 0;
 	while (i < tmp->philo->nbr_philos)
 	{
+		//pthread_mutex_lock(&tmp->eat_counter_mutex);
 		if (tmp->eat_counter < tmp->philo->times_must_eat)
 		{
-			//printf("eat counter: %d || philo: %d\n", tmp->eat_counter, tmp->id);
-			usleep(1000);
+			usleep(500);
+			//pthread_mutex_unlock(&tmp->eat_counter_mutex);
 			return (0);
 		}
+		//pthread_mutex_unlock(&tmp->eat_counter_mutex);
 		i++;
-		//printf("eat counter: %d || philo: %d || i: %d\n", tmp->eat_counter, tmp->id, i);
 		tmp = tmp->next;
 	}
 	tmp->philo->stop_flag = 1;
 	destroy_mutex(philo->philo);
 	return (1);
+}
+
+static void	set_stop_flag(t_philo *philo)
+{
+	pthread_mutex_lock(&philo->check_deaths);
+	philo->stop_flag = 1;
+	pthread_mutex_unlock(&philo->check_deaths);
 }

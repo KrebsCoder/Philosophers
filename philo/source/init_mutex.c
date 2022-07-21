@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_mutex.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 02:23:30 by gcosta-d          #+#    #+#             */
-/*   Updated: 2022/07/15 07:00:10 by lkrebs-l         ###   ########.fr       */
+/*   Updated: 2022/07/21 03:07:17 by gcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	init_mutex(t_philo *philo)
 	while (i > 0)
 	{
 		pthread_mutex_init(&tmp->fork, NULL);
+		//pthread_mutex_init(&tmp->eat_counter_mutex, NULL);
 		tmp = tmp->next;
 		i--;
 	}
