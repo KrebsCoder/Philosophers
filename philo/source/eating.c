@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   eating.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 02:19:36 by gcosta-d          #+#    #+#             */
-/*   Updated: 2022/07/21 03:41:30 by gcosta-d         ###   ########.fr       */
+/*   Updated: 2022/07/22 02:41:24 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ static int take_first_fork(t_list *philo)
 
 static int	take_second_fork(t_list *philo)
 {
-	if (!check_death(philo->philo))
+	if (check_death(philo->philo))
 		return (0);
 	pthread_mutex_lock(&philo->next->fork);
 	print_philo(philo, FORK);
