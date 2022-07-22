@@ -6,7 +6,7 @@
 /*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 02:19:36 by gcosta-d          #+#    #+#             */
-/*   Updated: 2022/07/22 02:41:24 by lkrebs-l         ###   ########.fr       */
+/*   Updated: 2022/07/22 03:32:12 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,10 @@ int	philo_is_eating(t_list *philo)
 {
 	take_first_fork(philo);
 	take_second_fork(philo);
+	pthread_mutex_lock(&philo->philo->is_printing_mutex);
 	philo->eat_counter++;
 	philo->stopped_eating = current_time();
+	pthread_mutex_unlock(&philo->philo->is_printing_mutex);
 	msleep(philo->philo->time_eat);
 	if (check_death(philo->philo))
 		return (0);
@@ -28,13 +30,10 @@ int	philo_is_eating(t_list *philo)
 	if (check_death(philo->philo))
 		return (0);
 	pthread_mutex_unlock(&philo->next->fork);
-	//pthread_mutex_lock(&philo->eat_counter_mutex);
-	//philo->eat_counter++;
-	//pthread_mutex_unlock(&philo->eat_counter_mutex);
 	return (1);
 }
 
-static int take_first_fork(t_list *philo)
+static int	take_first_fork(t_list *philo)
 {
 	if (check_death(philo->philo))
 		return (0);

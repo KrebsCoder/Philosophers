@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   routine_vigilant.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 01:05:50 by lkrebs-l          #+#    #+#             */
-/*   Updated: 2022/07/21 03:47:21 by gcosta-d         ###   ########.fr       */
+/*   Updated: 2022/07/22 03:32:53 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	*routine_vigilant(void *node)
 			break ;
 		}
 		if (philo->philo->times_must_eat && check_eat_counter(philo))
-			return (NULL) ;
+			return (NULL);
 		pthread_mutex_unlock(&philo->philo->is_printing_mutex);
 		philo = philo->next;
 		usleep(500);
@@ -45,24 +45,24 @@ void	*routine_vigilant(void *node)
 static int	check_eat_counter(t_list *philo)
 {
 	t_list	*tmp;
-	int	i;
+	int		i;
 
 	tmp = philo;
 	i = 0;
+	pthread_mutex_lock(&philo->philo->check_deaths);
 	while (i < tmp->philo->nbr_philos)
 	{
-		//pthread_mutex_lock(&tmp->eat_counter_mutex);
 		if (tmp->eat_counter < tmp->philo->times_must_eat)
 		{
 			usleep(500);
-			//pthread_mutex_unlock(&tmp->eat_counter_mutex);
+			pthread_mutex_unlock(&philo->philo->check_deaths);
 			return (0);
 		}
-		//pthread_mutex_unlock(&tmp->eat_counter_mutex);
 		i++;
 		tmp = tmp->next;
 	}
 	tmp->philo->stop_flag = 1;
+	pthread_mutex_unlock(&philo->philo->check_deaths);
 	destroy_mutex(philo->philo);
 	return (1);
 }

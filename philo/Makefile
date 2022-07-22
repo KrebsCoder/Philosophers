@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+         #
+#    By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/25 22:15:48 by gcosta-d          #+#    #+#              #
-#    Updated: 2022/07/20 04:51:32 by gcosta-d         ###   ########.fr        #
+#    Updated: 2022/07/22 02:32:48 by lkrebs-l         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = philo
 
-CFLAGS = -Wall -Wextra -Werror -g3 -pthread -fsanitize=thread
+CFLAGS = -Wall -Wextra -Werror -g3 -pthread 
 #-fsanitize=thread
 CC = gcc
 

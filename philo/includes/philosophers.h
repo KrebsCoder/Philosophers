@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philosophers.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 22:54:36 by gcosta-d          #+#    #+#             */
-/*   Updated: 2022/07/21 03:48:40 by gcosta-d         ###   ########.fr       */
+/*   Updated: 2022/07/22 03:31:40 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
 # define SLEEP "is sleeping"
 # define THINK "is thinking"
 # define DIED "died"
+
 typedef struct s_list
 {
 	int				eat_counter;
@@ -70,7 +71,7 @@ long	current_time(void);
 void	detach_thread(t_philo *philo);
 void	print_philo(t_list *philo, char *string);
 void	print_philo_is_dead(t_list *philo, char *string);
-void    msleep(int time_in_ms);
+void	msleep(int time_in_ms);
 
 // Routines
 int		philo_is_eating(t_list *philo);
