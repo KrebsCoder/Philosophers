@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philosophers.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 22:54:36 by gcosta-d          #+#    #+#             */
-/*   Updated: 2022/07/22 03:31:40 by lkrebs-l         ###   ########.fr       */
+/*   Updated: 2022/07/23 02:32:51 by gcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ typedef struct s_list
 {
 	int				eat_counter;
 	int				id;
-	long			first_fork;
 	long			start_time;
 	long			stopped_eating;
 	pthread_t		thread;
@@ -50,11 +49,9 @@ typedef struct s_philo
 	int				time_sleep;
 	int				time_die;
 	int				times_must_eat;
-	int				is_dead;
 	t_list			*list;
 	pthread_t		vigilant;
 	pthread_mutex_t	check_deaths;
-	pthread_mutex_t	time_in_ms_mutex;
 	pthread_mutex_t	is_printing_mutex;
 	struct timeval	current_time;
 }	t_philo;
@@ -68,7 +65,6 @@ void	init_mutex(t_philo *philo);
 void	destroy_mutex(t_philo *philo);
 long	time_in_ms(t_list *philo);
 long	current_time(void);
-void	detach_thread(t_philo *philo);
 void	print_philo(t_list *philo, char *string);
 void	print_philo_is_dead(t_list *philo, char *string);
 void	msleep(int time_in_ms);

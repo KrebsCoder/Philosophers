@@ -3,17 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+         #
+#    By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/25 22:15:48 by gcosta-d          #+#    #+#              #
-#    Updated: 2022/07/22 02:32:48 by lkrebs-l         ###   ########.fr        #
+#    Updated: 2022/07/23 02:17:22 by gcosta-d         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = philo
 
-CFLAGS = -Wall -Wextra -Werror -g3 -pthread 
-#-fsanitize=thread
+CFLAGS = -Wall -Wextra -Werror -g3 -pthread
+
 CC = gcc
 
 VPATH = source utils
@@ -23,7 +23,6 @@ FILES = main.c \
 		create_philo.c \
 		create_threads.c \
 		destroy_mutex.c \
-		detach_thread.c \
 		eating.c \
 		init_linked_list.c \
 		init_mutex.c \

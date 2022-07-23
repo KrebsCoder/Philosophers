@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   routines.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/05 02:33:19 by gcosta-d          #+#    #+#             */
-/*   Updated: 2022/07/21 01:26:57 by lkrebs-l         ###   ########.fr       */
+/*   Created: 2022/07/23 02:13:27 by gcosta-d          #+#    #+#             */
+/*   Updated: 2022/07/23 02:13:29 by gcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/philosophers.h"
-
-/* static void	check_if_is_dead(t_philo *philo); */
 
 void	*routine(void *node)
 {
